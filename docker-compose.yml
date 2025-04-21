@@ -1,60 +1,51 @@
-version: '3.7'
+version: "3.8"
 
 services:
-  nginx:
-    image: lscr.io/linuxserver/nginx
-    container_name: nginx
-    restart: unless-stopped
-    networks:
-      - net
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./data/nginx/site-confs:/config/nginx/site-confs
-      - ./data/nginx/proxy-confs:/config/nginx/proxy-confs
-      - ./data/nginx/data:/config/nginx/data
-    environment:
-      - VIRTUAL_HOST=gitea.local,grafana.local
-      - VIRTUAL_PORT=3000
-      - LETSENCRYPT_HOST=gitea.local,grafana.local
-      - LETSENCRYPT_EMAIL=your-email@example.com
-
-  authelia:
-    image: authelia/authelia
-    container_name: authelia
-    restart: unless-stopped
-    networks:
-      - net
-    volumes:
-      - ./data/authelia/config:/config
-    environment:
-      - TZ=Asia/Kolkata
-
   gitea:
     image: gitea/gitea:latest
     container_name: gitea
-    restart: unless-stopped
-    networks:
-      - net
     volumes:
       - ./data/gitea:/data
-    environment:
-      - VIRTUAL_HOST=gitea.local
-      - VIRTUAL_PORT=3000
+    expose:
+      - "3000"
+    networks:
+      - internal
 
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
-    restart: unless-stopped
-    networks:
-      - net
     volumes:
       - ./data/grafana:/var/lib/grafana
-    environment:
-      - VIRTUAL_HOST=grafana.local
-      - VIRTUAL_PORT=3000
+    expose:
+      - "3000"
+    networks:
+      - internal
+
+  authelia:
+    image: authelia/authelia:latest
+    container_name: authelia
+    volumes:
+      - ./authelia/config:/config
+    expose:
+      - "9091"
+    networks:
+      - internal
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/site-confs:/etc/nginx/conf.d
+      - ./nginx/proxy-confs:/config/nginx/proxy-confs
+    depends_on:
+      - gitea
+      - grafana
+      - authelia
+    networks:
+      - internal
 
 networks:
-  net:
+  internal:
     driver: bridge
