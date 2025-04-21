@@ -1,9 +1,6 @@
-theme: dark
-server:
-  address: '0.0.0.0:9091'
-
-log:
-  level: info
+host: 0.0.0.0
+port: 9091
+jwt_secret: somesecret
 
 authentication_backend:
   file:
@@ -12,35 +9,19 @@ authentication_backend:
 access_control:
   default_policy: deny
   rules:
-    - domain: "gitea.local"
-      policy: one_factor
-    - domain: "grafana.local"
+    - domain: "*.local"
       policy: one_factor
 
 session:
   name: authelia_session
-  secret: your-session-secret
-  expiration: 1h
-  inactivity: 5m
-  domain: local
+  secret: authelia_secret
+  expiration: 3600
+  domain: gitea.local
 
 storage:
   local:
     path: /config/db.sqlite3
 
 notifier:
-  disable_startup_check: false
-  smtp:
-    username: your-email@example.com
-    password: your-email-password
-    host: smtp.example.com
-    port: 587
-    sender: your-email@example.com
-    identifier: localhost
-    subject: "[Authelia] {title}"
-    startup_check_address: test@authelia.com
-    disable_require_tls: false
-    disable_html_emails: false
-    tls:
-      skip_verify: false
-      minimum_version: TLS1.2
+  filesystem:
+    filename: /config/notification.txt
