@@ -1,17 +1,21 @@
  assignment
 
-## Requirements
+## Requirements:
 
 - Docker
 - Docker Compose
 - Update your `/etc/hosts` file:
 127.0.0.1 gitea.local grafana.local
 
-  ## Step-by-Step Instructions
+  
+
+  ## Step-by-Step Instructions:
 
 ### 1. Clone the Repo
 
 git clone https://github.com/nishantnesargi13/assignment.git
+
+
 cd assignment
 
 ## **2. Configure Authelia**
@@ -19,7 +23,7 @@ cd assignment
 Edit `data/authelia/config/configuration.yml` and define:
 
 - **JWT secret**
-- **Authentication backend** (use `file`)
+- **Authentication backend** 
 - Access control rules (for gitea.local, grafana.local)
 
 
