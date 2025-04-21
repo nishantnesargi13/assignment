@@ -34,7 +34,9 @@ Edit data/authelia/config/users_database.yml
 users:
   nishant:
     displayname: Nishant
+  
     password: <hashed-password>
+   
     email: nishant@example.com
 
 Generate hashed password using:docker run authelia/authelia:latest authelia hash-password 'your-password'
