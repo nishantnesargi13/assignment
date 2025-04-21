@@ -15,7 +15,7 @@
 git clone https://github.com/nishantnesargi13/assignment.git
 cd assignment
 
-## ** 2. Set Up Authelia Configuration
+##  2. Set Up Authelia Configuration ##
 Edit data/authelia/config/configuration.yml and define:
 
 JWT secret
