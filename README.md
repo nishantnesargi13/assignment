@@ -1,4 +1,4 @@
-# assignment
+ assignment
 
 ## Requirements
 
@@ -9,20 +9,20 @@
 
   ## Step-by-Step Instructions
 
-**### 1. Clone the Repo
+### 1. Clone the Repo
 
 ```bash
 git clone https://github.com/nishantnesargi13/assignment.git
 cd assignment
 
- ### **2. Set Up Authelia Configuration ** ##
-Edit data/authelia/config/configuration.yml and define:
+## **2. Configure Authelia**
 
-JWT secret  
+Edit `data/authelia/config/configuration.yml` and define:
 
-Authentication backend
+- **JWT secret**
+- **Authentication backend** (use `file`)
+- Access control rules (for gitea.local, grafana.local)
 
-Access control rules
 
 
 # 3. Create Authelia User
