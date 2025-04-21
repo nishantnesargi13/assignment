@@ -1,14 +1,5 @@
 users:
-  admin:
-    password: "$argon2id$v=19$m=65536,t=3,p=2$Lrq4a7LvuAkAAJfg8OeAqg$V3y7bmfMN8+z1V0hxjBeF+KWWOZJ5nG7XDHx9WbtkeI"
-    displayname: "Admin User"
-    email: admin@example.com
-    groups:
-      - admins
-
-  user:
-    password: "$argon2id$v=19$m=65536,t=3,p=2$hT9u7Pt+vp6n1YBoV1Bmbw$y89nB2p8pY6+f5jFuX0Yi3IsB6Itk0MuA5R+7S2OVX4"
-    displayname: "Regular User"
-    email: user@example.com
-    groups:
-      - users
+  nishant:
+    displayname: "Nishant"
+    password: "$argon2id$v=19$m=65536,t=2,p=1$..." 
+    email: nishant@example.com
