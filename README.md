@@ -11,7 +11,6 @@
 
 ### 1. Clone the Repo
 
-```bash
 git clone https://github.com/nishantnesargi13/assignment.git
 cd assignment
 
@@ -46,7 +45,7 @@ data/nginx/site-confs/gitea.local.conf
 data/nginx/site-confs/grafana.local.conf
 
 
-5. Launch Services
+## 5. Launch Services
 Run the following:
 docker-compose up -d
 
@@ -65,7 +64,7 @@ Password: <your password>
 
 
 
-Notes:
+## Notes:
 You must have gitea.local and grafana.local in your /etc/hosts file.
 
 Password must be hashed using Authelia's hash tool.
