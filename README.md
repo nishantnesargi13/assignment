@@ -44,9 +44,12 @@ Generate hashed password using:docker run authelia/authelia:latest authelia hash
 ## *4. Nginx Proxy Config*
 
 Shared Proxy Config
+
 data/nginx/proxy-confs/proxy.conf/
+
   a)Gitea Proxy Config
 data/nginx/site-confs/gitea.local.conf
+
   b)Grafana Proxy Config
 data/nginx/site-confs/grafana.local.conf
 
