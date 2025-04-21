@@ -1,4 +1,4 @@
- assignment
+### assignment
 
 ## Requirements:
 
@@ -11,7 +11,7 @@
 
   ## Step-by-Step Instructions:
 
-### 1. Clone the Repo
+## 1. Clone the Repo
 
 git clone https://github.com/nishantnesargi13/assignment.git
 
@@ -28,7 +28,7 @@ Edit `data/authelia/config/configuration.yml` and define:
 
 
 
-# 3. Create Authelia User
+## 3. Create Authelia User
 Edit data/authelia/config/users_database.yml
 
 users:
@@ -47,10 +47,10 @@ Shared Proxy Config
 
 data/nginx/proxy-confs/proxy.conf/
 
-  a)Gitea Proxy Config
+ # a)Gitea Proxy Config
 data/nginx/site-confs/gitea.local.conf
 
-  b)Grafana Proxy Config
+#  b)Grafana Proxy Config
 data/nginx/site-confs/grafana.local.conf
 
 
@@ -65,9 +65,11 @@ Gitea → http://gitea.local
 Grafana → http://grafana.local
 
 
-Default Login
+# Default Login
 Use the credentials from users_database.yml
+
 Username: nishant
+
 Password: <your password>
 
 
