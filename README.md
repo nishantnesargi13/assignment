@@ -9,13 +9,13 @@
 
   ## Step-by-Step Instructions
 
-### 1. Clone the Repo
+**### 1. Clone the Repo
 
 ```bash
 git clone https://github.com/nishantnesargi13/assignment.git
 cd assignment
 
-### **2. Set Up Authelia Configuration **
+ ### **2. Set Up Authelia Configuration ** ##
 Edit data/authelia/config/configuration.yml and define:
 
 JWT secret  
@@ -25,7 +25,7 @@ Authentication backend
 Access control rules
 
 
-3. Create Authelia User
+# 3. Create Authelia User
 Edit data/authelia/config/users_database.yml
 
 users:
@@ -70,4 +70,4 @@ You must have gitea.local and grafana.local in your /etc/hosts file.
 
 Password must be hashed using Authelia's hash tool.
 
-Make sure no other service is using port 80.
+Make sure no other service is using port 80.**
